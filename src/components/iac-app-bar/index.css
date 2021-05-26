@@ -1,0 +1,13 @@
+/* This is not so cool, but the shadow DOM is completely isolated */
+@import url('/index.css');
+
+.iac-app-bar {
+  background-color: #f00;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 12px;
+}
+
+.iac-app-bar slot[name="title"] {
+  font-size: 24px;
+}
