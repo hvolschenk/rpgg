@@ -2,8 +2,26 @@
 <html>
   <head>
     <title>RPGG</title>
+    <link href="/index.css" rel="stylesheet" type="text/css" />
+    <script src="/components/app-router/index.js" type="module"></script>
+    <script src="/components/app-router/link/index.js" type="module"></script>
+    <script src="/components/iac-app-bar/index.js" type="module"></script>
   </head>
   <body>
-    <p>RPGG</p>
+    <div id="root">
+      <iac-app-bar>
+        <h4 slot="title">RPGG</h4>
+      </iac-app-bar>
+      <app-router>
+        <ul>
+          <li><app-router-link href="/">Home</app-router-link></li>
+          <li><app-router-link href="/products">Products</app-router-link></li>
+        </ul>
+        <app-router-route component="page-home" id="home" path="/"></app-router-route>
+        <app-router-route component="page-product" id="product" path="/products/:productId"></app-router-route>
+        <app-router-route component="page-products" id="products" path="/products"></app-router-route>
+        <app-router-outlet></app-router-outlet>
+      </app-router>
+    </div>
   </body>
 </html>
